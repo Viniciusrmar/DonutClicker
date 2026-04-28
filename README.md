@@ -69,7 +69,7 @@ donut-clicker/
 | Funções | uma função por responsabilidade: `desenharTelaJogo`, `tratarCliqueNosUpgrades`, `executarProducaoAutomatica`, etc. |
 | Organização | código separado em 5 arquivos por responsabilidade |
 | Comentários | todos os arquivos comentados explicando variáveis e funções |
-| Tela de início | ✅ |
-| Tela de game over | ✅ |
-| Contagem de pontos | ✅ contador de donuts + barra de progresso |
-| Feito em p5.js | ✅ |
+| Tela de início | ok |
+| Tela de game over | ok |
+| Contagem de pontos | ok contador de donuts + barra de progresso |
+| Feito em p5.js | ok |
