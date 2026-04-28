@@ -4,10 +4,10 @@ Trabalho de Desenvolvimento de Sistemas — Tema 1: Game Simples
 
 ## Integrantes
 
-- **Nome do Aluno 1** — RA: XXXXXXX
-- **Nome do Aluno 2** — RA: XXXXXXX
-
-> *(substitua com os nomes e RAs reais)*
+- **Felipe Bresciani Janz**
+- **Pedro Augusto Stabach**
+- **Vinicius Machado de Moura**
+- **Vinicius Robaskievicz Marinho**
 
 ---
 
@@ -35,7 +35,7 @@ Trabalho de Desenvolvimento de Sistemas — Tema 1: Game Simples
 
 ## Como executar
 ### Abrir direto no navegador
-Basta abrir o arquivo `index.html` em qualquer navegador moderno (Chrome, Firefox, Edge).
+Basta abrir o arquivo `index.html` em qualquer navegador (Chrome, Firefox, Edge).
 
 ## Estrutura do projeto
 
