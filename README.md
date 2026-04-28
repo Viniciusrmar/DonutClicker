@@ -1,6 +1,6 @@
 # 🍩 Donut Clicker
 
-Trabalho de Desenvolvimento de Sistemas — Tema 1: Game Simples
+Tema 1: Game Simples
 
 ## Integrantes
 
