@@ -6,6 +6,7 @@ function mousePressed() {
     if (telaAtual === "inicio") tratarClickTelaInicio();
     if (telaAtual === "jogo") tratarClickTelaJogo();
     if (telaAtual === "gameover") tratarClickTelaGameOver();
+    if (telaAtual === "maestria") tratarClickTelaMaestria();
 }
 
 // click na tela de inicio
@@ -30,6 +31,7 @@ function tratarClickTelaJogo() {
     tratarClickDonut();
     tratarClickUpgrades();
     tratarClickMelhorias();
+    tratarClickBotaoMaestria(); // botão que abre a tela de maestrias
 }
 
 // verifica se o jogador clicou no donut
@@ -42,6 +44,7 @@ function tratarClickDonut() {
 
     if (clicouNoDonut) {
         totalDonuts += donutsPerClick;
+        totalCliques++; // conta o clique (usado pela Maestria do Clique)
 
         // cria particulas de click
         listaParticulas.push({
@@ -72,6 +75,7 @@ function tratarClickUpgrades() {
             totalDonuts -= upgrade.custo;
             donutsPerSecond += upgrade.producaoPerSecond;
             upgrade.quantidadeComprada++;
+            totalUpgradesComprados++; // conta a compra (usado pela Maestria do Comércio)
 
             // aumenta o custo do upgrade em 15% para a próxima compra
             upgrade.custo = floor(upgrade.custo * 1.15);
@@ -150,6 +154,8 @@ function reiniciarJogo() {
         {nome: "Turbo Click", custo: 300, bonusPerClick: 3, comprada: false},
         {nome: "Mãos de Ouro", custo: 1500, bonusPerClick: 10, comprada: false},
     ];
+
+    reiniciarMaestrias(); // zera o progresso das maestrias
 
     telaAtual = "inicio";
 }

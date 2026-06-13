@@ -76,6 +76,9 @@ function desenharPainelEsquerdo() {
     textSize(11);
     text("CLIQUE NO DONUT!", donutCentralX, donutCentralY + 100);
 
+    // Botão que abre a tela de maestrias (sistema de maestria)
+    desenharBotaoMaestria();
+
     // Barra de progresso
     desenharBarraProgresso();
 }

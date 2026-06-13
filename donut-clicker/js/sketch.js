@@ -14,10 +14,14 @@ function draw() {
     // produção automatica de donuts (roda a cada 100ms internamente)
     executarProducaoAutomatica();
 
+    // atualiza o progresso das maestrias (sistema de maestria)
+    atualizarMaestrias();
+
     // desenha a tela correspondente ao estado atual do jogo
     if (telaAtual === "inicio") desenharTelaInicio();
     if (telaAtual === "jogo") desenharTelaJogo();
     if (telaAtual === "gameover") desenharTelaGameOver();
+    if (telaAtual === "maestria") desenharTelaMaestria();
 
     // atualiza e desenha as particulas visuais de click
     atualizarParticulas();
