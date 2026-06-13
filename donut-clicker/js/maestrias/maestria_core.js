@@ -1,6 +1,44 @@
 // MAESTRIA_CORE.JS
-// Base do sistema de maestria: guarda as maestrias, conta cliques e compras,
-// e desenha a tela de maestria com as barras de progresso
+// Base do sistema de maestria: a classe Maestria, a lista de maestrias,
+// os contadores e o desenho da tela de maestria
+
+// Classe que representa uma maestria. Cada maestria recebe na criação:
+//   nome, emoji, cor, nivelMaximo, metas, descricao
+//   medirProgresso() -> função que devolve o progresso atual
+//   aoSubirNivel()   -> função que aplica o bônus quando sobe de nível
+class Maestria {
+    constructor(config) {
+        this.nome = config.nome;
+        this.emoji = config.emoji;
+        this.cor = config.cor;
+        this.nivelMaximo = config.nivelMaximo;
+        this.metas = config.metas;
+        this.descricao = config.descricao;
+        this.medirProgresso = config.medirProgresso;
+        this.aoSubirNivel = config.aoSubirNivel;
+
+        this.nivel = 0;
+        this.valorAtual = 0;
+    }
+
+    // mede o progresso e sobe de nível enquanto bater as metas
+    atualizar() {
+        this.valorAtual = this.medirProgresso();
+
+        while (this.nivel < this.nivelMaximo && this.valorAtual >= this.metas[this.nivel]) {
+            this.nivel++;
+            this.aoSubirNivel();
+            tocarSomNivel(); // som ao subir de nível
+        }
+    }
+
+    // volta a maestria para o estado inicial
+    reiniciar() {
+        this.nivel = 0;
+        this.valorAtual = 0;
+        if (this.recorde !== undefined) this.recorde = 0; // usado pela maestria da riqueza
+    }
+}
 
 // lista com todas as maestrias registradas
 let listaMaestrias = [];
@@ -26,10 +64,7 @@ function reiniciarMaestrias() {
     totalCliques = 0;
     totalUpgradesComprados = 0;
     for (let i = 0; i < listaMaestrias.length; i++) {
-        let m = listaMaestrias[i];
-        m.nivel = 0;
-        m.valorAtual = 0;
-        if (m.recorde !== undefined) m.recorde = 0; // usado pela maestria da riqueza
+        listaMaestrias[i].reiniciar();
     }
 }
 

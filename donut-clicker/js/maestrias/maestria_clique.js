@@ -2,29 +2,23 @@
 // Maestria do Clique: sobe de nível conforme o jogador clica no donut
 // e aumenta os donuts ganhos por clique
 
-let maestriaClique = {
+let maestriaClique = new Maestria({
     nome: "Maestria do Clique",
     emoji: "👆",
     cor: [230, 120, 60],
-
-    nivel: 0,
     nivelMaximo: 5,
-
-    // cliques necessários para cada nível
-    metas: [25, 100, 300, 700, 1500],
-
-    valorAtual: 0,
+    metas: [25, 100, 300, 700, 1500], // cliques necessários para cada nível
     descricao: "+1 donut por clique a cada nível",
 
-    // mede o progresso e sobe de nível
-    atualizar: function () {
-        this.valorAtual = totalCliques;
+    // mede o progresso: total de cliques no donut
+    medirProgresso: function () {
+        return totalCliques;
+    },
 
-        while (this.nivel < this.nivelMaximo && this.valorAtual >= this.metas[this.nivel]) {
-            this.nivel++;
-            donutsPerClick += 1; // bônus: +1 por clique a cada nível
-        }
+    // bônus aplicado a cada nível
+    aoSubirNivel: function () {
+        donutsPerClick += 1;
     }
-};
+});
 
 registrarMaestria(maestriaClique);

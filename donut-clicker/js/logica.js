@@ -4,9 +4,10 @@
 // chamada pelo p5.js automaticamente a cada click do mouse
 function mousePressed() {
     if (telaAtual === "inicio") tratarClickTelaInicio();
-    if (telaAtual === "jogo") tratarClickTelaJogo();
-    if (telaAtual === "gameover") tratarClickTelaGameOver();
-    if (telaAtual === "maestria") tratarClickTelaMaestria();
+    else if (telaAtual === "sobre") tratarClickTelaSobre();
+    else if (telaAtual === "jogo") tratarClickTelaJogo();
+    else if (telaAtual === "gameover") tratarClickTelaGameOver();
+    else if (telaAtual === "maestria") tratarClickTelaMaestria();
 }
 
 // click na tela de inicio
@@ -23,6 +24,22 @@ function tratarClickTelaInicio() {
 
     if (mouseEmCima) {
         telaAtual = "jogo";
+    }
+
+    // botão SOBRE
+    let sobreEmCima = mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
+                      mouseY > 435 - 23 && mouseY < 435 + 23;
+    if (sobreEmCima) {
+        telaAtual = "sobre";
+    }
+}
+
+// click na tela de sobre (botão voltar)
+function tratarClickTelaSobre() {
+    let voltarEmCima = mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
+                       mouseY > 440 - 23 && mouseY < 440 + 23;
+    if (voltarEmCima) {
+        telaAtual = "inicio";
     }
 }
 
@@ -45,16 +62,10 @@ function tratarClickDonut() {
     if (clicouNoDonut) {
         totalDonuts += donutsPerClick;
         totalCliques++; // conta o clique (usado pela Maestria do Clique)
+        tocarSomClique(); // som do clique
 
-        // cria particulas de click
-        listaParticulas.push({
-            posicaoX: mouseX,
-            posicaoY: mouseY,
-            velocidadeX: random(-2, 2),
-            velocidadeY: random(-4, -1),
-            vidaRestante: 60,
-            valorExibido: donutsPerClick
-        });
+        // cria uma particula "+valor" no local do clique
+        listaParticulas.push(new Particula(mouseX, mouseY, donutsPerClick));
     }
 }
 
@@ -76,6 +87,7 @@ function tratarClickUpgrades() {
             donutsPerSecond += upgrade.producaoPerSecond;
             upgrade.quantidadeComprada++;
             totalUpgradesComprados++; // conta a compra (usado pela Maestria do Comércio)
+            tocarSomCompra(); // som da compra
 
             // aumenta o custo do upgrade em 15% para a próxima compra
             upgrade.custo = floor(upgrade.custo * 1.15);
@@ -100,6 +112,7 @@ function tratarClickMelhorias() {
             totalDonuts -= melhoria.custo;
             donutsPerClick += melhoria.bonusPerClick;
             melhoria.comprada = true;
+            tocarSomCompra(); // som da compra
         }
     }
 }

@@ -25,8 +25,50 @@ function desenharTelaInicio() {
     text("Compre upgrades para produzir mais.", width / 2, 278);
     text("Meta: " +formatarNumero(META_DONUTS) + " donuts para vencer!", width / 2, 300);
 
-    // Botão Jogar
+    // Botões
     desenharBotao("JOGAR", width / 2, 370, 200, 50);
+    desenharBotao("SOBRE", width / 2, 435, 200, 46);
+}
+
+// Tela de Sobre: mostra os integrantes do grupo
+function desenharTelaSobre() {
+    background(250, 240, 230);
+
+    // circulo decorativo
+    fill(210, 160, 80, 60);
+    noStroke();
+    ellipse(width / 2, height / 2, 420, 420);
+
+    // titulo
+    fill(120, 60, 20);
+    textAlign(CENTER);
+    textSize(30);
+    textStyle(BOLD);
+    text("SOBRE", width / 2, 80);
+
+    textSize(40);
+    text("🍩", width / 2, 140);
+
+    // nome do jogo
+    textStyle(NORMAL);
+    textSize(16);
+    fill(100, 60, 20);
+    text("Donut Clicker — Final Challenge", width / 2, 185);
+
+    // integrantes
+    textSize(14);
+    fill(130, 80, 40);
+    text("Integrantes:", width / 2, 230);
+
+    textSize(15);
+    fill(90, 50, 15);
+    text("Felipe Bresciani Janz", width / 2, 265);
+    text("Pedro Augusto Stabach", width / 2, 295);
+    text("Vinicius Machado de Moura", width / 2, 325);
+    text("Vinicius Robaskievicz Marinho", width / 2, 355);
+
+    // botão de voltar
+    desenharBotao("VOLTAR", width / 2, 440, 200, 46);
 }
 
 // Tela de Jogo

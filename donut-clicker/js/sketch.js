@@ -19,6 +19,7 @@ function draw() {
 
     // desenha a tela correspondente ao estado atual do jogo
     if (telaAtual === "inicio") desenharTelaInicio();
+    if (telaAtual === "sobre") desenharTelaSobre();
     if (telaAtual === "jogo") desenharTelaJogo();
     if (telaAtual === "gameover") desenharTelaGameOver();
     if (telaAtual === "maestria") desenharTelaMaestria();
