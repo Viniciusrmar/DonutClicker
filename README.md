@@ -9,6 +9,11 @@ Tema 1: Game Simples
 - **Vinicius Machado de Moura**
 - **Vinicius Robaskievicz Marinho**
 
+## Vídeo de apresentação
+
+🎥 **[Assista no YouTube](LINK_DO_VIDEO)**
+
+
 ---
 
 ## Sobre o jogo
