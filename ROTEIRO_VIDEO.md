@@ -12,11 +12,11 @@ mostra o trecho de código dele e demonstra a parte funcionando no jogo.
 
 | Bloco | Quem | Tempo |
 |---|---|---|
-| 1. Abertura + visão geral + telas | Vinicius R. Marinho | ~2:00 |
+| 1. Abertura + visão geral + telas | Vinicius R. Marinho | ~1:30 |
 | 2. Clique no donut, donut animado e partículas | Felipe | ~1:45 |
 | 3. Loja: produção automática | Pedro | ~1:45 |
 | 4. Melhorias, progresso e game over | Vinicius M. de Moura | ~1:45 |
-| 5. Sistema de maestria (cada um fala da sua) | Todos | ~1:30 |
+| 5. Sistema de maestria (classe + as 4 maestrias) | Vinicius R. Marinho | ~1:45 |
 | 6. Fechamento | Vinicius R. Marinho | ~0:30 |
 
 ---
@@ -79,19 +79,22 @@ Falar:
 
 ---
 
-## Bloco 5 — Sistema de maestria (cada um fala ~20s da sua)
+## Bloco 5 — Sistema de maestria (Vinicius Robaskievicz Marinho)
 
 **Mostrar:** abrir a tela 🏆 MAESTRIAS e mostrar as 4 barras subindo; ouvir o som de subir de nível.
 
-Primeiro, **Vinicius R. Marinho** explica a base:
-- A **classe `Maestria`** (em `maestria_core.js`): recebe os dados + duas funções (`medirProgresso` e `aoSubirNivel`); o método `atualizar()` sobe de nível enquanto bate as `metas` e aplica o bônus.
-- A lista `listaMaestrias` e como o `core` desenha todas as barras automaticamente.
+Apresentado por uma pessoa só, pra não fragmentar o vídeo:
 
-Depois, cada um fala da sua (mostrando o próprio arquivo):
-- **Vinicius R. Marinho — Maestria do Clique** (`maestria_clique.js`): progresso = total de cliques; bônus = +1 por clique.
-- **Felipe — Maestria da Produção** (`maestria_producao.js`): progresso = donuts por segundo; bônus = +2/s.
-- **Pedro — Maestria do Comércio** (`maestria_comercio.js`): progresso = nº de compras; bônus = +500 donuts.
-- **Vinicius M. de Moura — Maestria da Riqueza** (`maestria_riqueza.js`): progresso = recorde de donuts; bônus = +2 por clique.
+- A **classe `Maestria`** (em `maestria_core.js`): recebe os dados (`nome`, `metas`, etc.) + duas funções (`medirProgresso` e `aoSubirNivel`); o método `atualizar()` sobe de nível enquanto bate as `metas` e aplica o bônus. Bom exemplo de **classe + reaproveitamento de código**.
+- A lista `listaMaestrias` e como o `core` desenha todas as barras automaticamente num `for`.
+- As **4 maestrias** (cada uma é um `new Maestria({...})`), passando rápido pelo que cada uma faz:
+  - **Clique** — progresso = total de cliques; bônus = +1 por clique.
+  - **Produção** — progresso = donuts por segundo; bônus = +2/s.
+  - **Comércio** — progresso = nº de compras; bônus = +500 donuts.
+  - **Riqueza** — progresso = recorde de donuts; bônus = +2 por clique.
+
+> Cada colega já demonstra autoria explicando a parte da base do jogo que fez (blocos 2 a 4).
+> Se preferirem, dá pra trocar quem apresenta este bloco — só manter uma pessoa só.
 
 ---
 
