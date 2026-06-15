@@ -11,7 +11,7 @@ Tema 1: Game Simples
 
 ## Vídeo de apresentação
 
-🎥 **[Assista no YouTube](LINK_DO_VIDEO)**
+🎥 **[Assista no YouTube](https://youtu.be/N2Z4_CB6Wgg)**
 
 
 ---
